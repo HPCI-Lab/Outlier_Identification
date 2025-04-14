@@ -1,0 +1,33 @@
+run: 
+  epochs: 5
+  device: "cpu"
+  optimizer: "adam"  
+  learning_rate: 1.e-4
+  criterion: "CrossEntropyLoss" 
+model: 
+  type: "albert"
+  model_path: "albert/albert-base-v2"
+  inner_size: 1280
+  perturbate_embeddings: False
+dataset: 
+  type: "med"
+  samples_per_class: 2000
+  classes: 10
+  batch_size: 32
+  shuffle: True
+  outlier_number: 10
+  outlier_range: 1
+  outlier_distance: 0
+  context_len: 200
+detection: 
+  keep_epochs: [2,3]
+  use_pca: True
+  window_size: 2
+  techniques: []
+  metrics: ["Loss", "Step_time"] #, "Optim_step_time", "Backward_time", "Gpu_energy_nvidia", "Gpu_power_nvidia"]
+identification: 
+  window_size: 2
+  use_pca: True
+  keep_epochs: [2,3]
+  techniques: []
+  metrics: ["Loss", "Step_time"] #, "Optim_step_time", "Backward_time", "Gpu_energy_nvidia", "Gpu_power_nvidia"]

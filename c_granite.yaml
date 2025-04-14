@@ -1,0 +1,33 @@
+run: 
+  epochs: 20
+  device: "cpu"
+  optimizer: "adam"  
+  learning_rate: 1.e-5
+  criterion: "CrossEntropyLoss" 
+model: 
+  type: "granite"
+  model_path: "ibm-granite/granite-3.1-2b-base"
+  inner_size: 1280
+  perturbate_embeddings: False
+dataset: 
+  type: "med"
+  samples_per_class: 1666
+  classes: 3
+  batch_size: 32
+  shuffle: True
+  outlier_number: 10
+  outlier_range: 1
+  outlier_distance: 0
+  context_len: 100
+detection: 
+  keep_epochs: [2,3]
+  use_pca: True
+  window_size: 2
+  techniques: []
+  metrics: ["Loss", "Step_time"] #, "Optim_step_time", "Backward_time", "Gpu_energy_nvidia", "Gpu_power_nvidia"]
+identification: 
+  window_size: 2
+  use_pca: True
+  keep_epochs: [2,3]
+  techniques: []
+  metrics: ["Loss", "Step_time"] #, "Optim_step_time", "Backward_time", "Gpu_energy_nvidia", "Gpu_power_nvidia"]

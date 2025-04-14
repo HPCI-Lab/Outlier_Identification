@@ -1,0 +1,27 @@
+run: 
+  epochs: 20
+  device: "cpu"
+  optimizer: "adam"  
+  criterion: "CrossEntropyLoss" 
+  learning_rate: 0.001
+model: 
+  type: "swin"
+  inner_size: 1280
+dataset: 
+  type: "cifar100"
+  samples_per_class: 2000
+  classes: 10
+  batch_size: 32
+  shuffle: True
+  outlier_number: 10
+detection: 
+  keep_epochs: []
+  window_size: 2
+  use_pca: True
+  techniques: []
+  metrics: ["Loss", "Step_time"]
+identification: 
+  window_size: 3
+  keep_epochs: []
+  techniques: []
+  metrics: ["Loss", "Step_time"]

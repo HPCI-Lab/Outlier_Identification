@@ -1,0 +1,29 @@
+run: 
+  epochs: 20
+  device: "cpu"
+  optimizer: "adam"  
+  criterion: "CrossEntropyLoss" 
+  learning_rate: 0.01
+model: 
+  type: "mlp"
+  inner_size: 1280
+dataset: 
+  type: "samples"
+  samples_per_class: 2498
+  classes: 2
+  batch_size: 32
+  shuffle: True
+  outlier_number: 3
+  outlier_range: 10
+  outlier_distance: 0
+detection: 
+  keep_epochs: []
+  window_size: 2
+  use_pca: True
+  techniques: []
+  metrics: []
+identification:
+  window_size: 3
+  keep_epochs: [1]
+  techniques: []
+  metrics: []
