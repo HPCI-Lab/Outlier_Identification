@@ -1,0 +1,5 @@
+
+> output/out.txt
+> output/err.txt
+
+jbsub -q x86_1h -mem 32g -o output/out.txt -e output/err.txt python $@

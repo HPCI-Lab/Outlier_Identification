@@ -1,0 +1,6 @@
+
+> output/out.txt
+> output/err.txt
+
+jbsub -q x86_1h -cores 2+2 -mem 70g -r "v100" -o output/out.txt -e output/err.txt python $@
+# jbsub -q x86_1h -cores 1+1 -mem 10g -o output/out.txt -e output/err.txt python $@

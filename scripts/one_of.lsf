@@ -1,0 +1,2 @@
+
+jbsub -q x86_1h -cores 1+1 -mem 15g -r "v100" python $@
